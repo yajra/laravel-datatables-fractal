@@ -2,5 +2,5 @@
 
 ## Change Log
 
-### v1.0-dev - UNRELEASED
+### v1.0.0 - 06-30-2017
 - Initial release.
