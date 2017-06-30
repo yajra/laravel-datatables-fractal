@@ -15,12 +15,12 @@ This package is a plugin of [Laravel Datatables](https://github.com/yajra/larave
 - [Laravel DataTables v8.x](https://github.com/yajra/laravel-datatables)
 
 ## Documentations
-- [Laravel Datatables Documentation](http://yajrabox.com/docs/laravel-datatables)
+- [Laravel Datatables Fractal Documentation](https://yajrabox.com/docs/laravel-datatables/master/response-fractal)
 
 ## Quick Installation
 `composer require yajra/laravel-datatables-fractal:^1.0`
 
-#### Service Provider (Optional on Laravel 5.5)
+#### Register Service Provider (Optional on Laravel 5.5)
 `Yajra\Datatables\FractalServiceProvider::class`
 
 #### Configuration and Assets (Optional)
