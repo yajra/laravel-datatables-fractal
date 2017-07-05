@@ -1,6 +1,6 @@
 <?php
 
-namespace Yajra\Datatables\Transformers;
+namespace Yajra\DataTables\Transformers;
 
 use League\Fractal\Manager;
 use League\Fractal\Resource\Collection;

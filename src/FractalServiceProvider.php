@@ -1,19 +1,12 @@
 <?php
 
-namespace Yajra\Datatables;
+namespace Yajra\DataTables;
 
 use Illuminate\Support\ServiceProvider;
 use League\Fractal\Manager;
 use League\Fractal\Serializer\DataArraySerializer;
-use Yajra\Datatables\Engines\BaseEngine;
-use Yajra\Datatables\Transformers\FractalTransformer;
+use Yajra\DataTables\Transformers\FractalTransformer;
 
-/**
- * Class FractalServiceProvider.
- *
- * @package Yajra\Datatables
- * @author  Arjay Angeles <aqangeles@gmail.com>
- */
 class FractalServiceProvider extends ServiceProvider
 {
     /**
@@ -47,17 +40,17 @@ class FractalServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register Datatables macro methods.
+     * Register DataTables macro methods.
      */
     protected function registerMacro()
     {
-        BaseEngine::macro('setTransformer', function ($transformer) {
+        DataTableAbstract::macro('setTransformer', function ($transformer) {
             $this->transformer = $transformer;
 
             return $this;
         });
 
-        BaseEngine::macro('setSerializer', function ($serializer) {
+        DataTableAbstract::macro('setSerializer', function ($serializer) {
             $this->serializer = $serializer;
 
             return $this;
