@@ -2,8 +2,8 @@
 
 namespace Yajra\DataTables;
 
-use Illuminate\Support\ServiceProvider;
 use League\Fractal\Manager;
+use Illuminate\Support\ServiceProvider;
 use League\Fractal\Serializer\DataArraySerializer;
 use Yajra\DataTables\Transformers\FractalTransformer;
 

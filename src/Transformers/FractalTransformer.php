@@ -4,8 +4,8 @@ namespace Yajra\DataTables\Transformers;
 
 use League\Fractal\Manager;
 use League\Fractal\Resource\Collection;
-use League\Fractal\Serializer\SerializerAbstract;
 use League\Fractal\TransformerAbstract;
+use League\Fractal\Serializer\SerializerAbstract;
 
 class FractalTransformer
 {
