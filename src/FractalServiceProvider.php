@@ -2,8 +2,8 @@
 
 namespace Yajra\DataTables;
 
-use Illuminate\Support\ServiceProvider;
 use League\Fractal\Manager;
+use Illuminate\Support\ServiceProvider;
 use League\Fractal\Serializer\DataArraySerializer;
 use Yajra\DataTables\Transformers\FractalTransformer;
 
@@ -45,7 +45,13 @@ class FractalServiceProvider extends ServiceProvider
     protected function registerMacro()
     {
         DataTableAbstract::macro('setTransformer', function ($transformer) {
-            $this->transformer = $transformer;
+            $this->transformer = [$transformer];
+
+            return $this;
+        });
+
+        DataTableAbstract::macro('addTransformer', function ($transformer) {
+            $this->transformer[] = $transformer;
 
             return $this;
         });
