@@ -44,10 +44,11 @@ class FractalTransformer
                 $resource       = new Collection($output, $this->createTransformer($transform));
                 $collection     = $this->fractal->createData($resource)->toArray();
                 $transformed    = $collection['data'];
-                $collector = array_map(function ($item_collector, $item_transformed) {
+                $collector      = array_map(function ($item_collector, $item_transformed) {
                     if ($item_collector === null) {
                         $item_collector = [];
                     }
+
                     return array_merge($item_collector, $item_transformed);
                 }, $collector, $transformed);
             }
