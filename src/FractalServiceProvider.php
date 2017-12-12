@@ -45,7 +45,13 @@ class FractalServiceProvider extends ServiceProvider
     protected function registerMacro()
     {
         DataTableAbstract::macro('setTransformer', function ($transformer) {
-            $this->transformer = $transformer;
+            $this->transformer = [$transformer];
+
+            return $this;
+        });
+
+        DataTableAbstract::macro('addTransformer', function ($transformer) {
+            $this->transformer[] = $transformer;
 
             return $this;
         });
