@@ -43,7 +43,7 @@ class FractalTransformer
             if ($transform != null) {
                 $resource       = new Collection($output, $this->createTransformer($transform));
                 $collection     = $this->fractal->createData($resource)->toArray();
-                $transformed    = $collection['data'];
+                $transformed    = $collection['data'] ?? $collection;
                 $collector      = array_map(function ($item_collector, $item_transformed) {
                     if ($item_collector === null) {
                         $item_collector = [];
