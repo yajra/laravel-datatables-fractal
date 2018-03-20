@@ -23,7 +23,7 @@ class FractalServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->mergeConfigFrom(__DIR__ . '/config/config.php', 'datatables-fractal');
+        $this->mergeConfigFrom(__DIR__ . '/../config/datatables-fractal.php', 'datatables-fractal');
         $this->publishAssets();
 
         $this->registerMacro();
@@ -35,7 +35,7 @@ class FractalServiceProvider extends ServiceProvider
     protected function publishAssets()
     {
         $this->publishes([
-            __DIR__ . '/config/config.php' => config_path('datatables-fractal.php'),
+            __DIR__ . '/../config/datatables-fractal.php' => config_path('datatables-fractal.php'),
         ], 'datatables-fractal');
     }
 
