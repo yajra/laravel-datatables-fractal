@@ -33,8 +33,9 @@ class TransformerMakeCommand extends GeneratorCommand
     /**
      * Replace the class name for the given stub.
      *
-     * @param  string  $stub
-     * @param  string  $name
+     * @param string $stub Contents of the stub
+     * @param string $name The class name
+     *
      * @return string
      */
     protected function replaceClass($stub, $name)
@@ -43,7 +44,7 @@ class TransformerMakeCommand extends GeneratorCommand
         $stub = str_replace('Dummy', ucfirst($this->argument('name')), $stub);
         $stub = str_replace('dummy', lcfirst($this->argument('name')), $stub);
 
-        if($this->argument('include')) {
+        if ($this->argument('include')) {
             $stub = str_replace('Item', ucfirst($this->argument('include')), $stub);
             $stub = str_replace('item', lcfirst($this->argument('include')), $stub);
         }
@@ -66,7 +67,8 @@ class TransformerMakeCommand extends GeneratorCommand
     /**
      * Get the default namespace for the class.
      *
-     * @param  string  $rootNamespace
+     * @param string $rootNamespace The root namespace
+     *
      * @return string
      */
     protected function getDefaultNamespace($rootNamespace)
@@ -77,7 +79,8 @@ class TransformerMakeCommand extends GeneratorCommand
     /**
      * Get the destination class path.
      *
-     * @param  string  $name
+     * @param string $name Name of the class with namespace
+     *
      * @return string
      */
     protected function getPath($name)
