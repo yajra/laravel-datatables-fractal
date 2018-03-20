@@ -109,7 +109,7 @@ class FractalServiceProvider extends ServiceProvider
 
         $this->commands(
             [
-				TransformerMakeCommand::class,
+			    TransformerMakeCommand::class,
             ]
         );
     }
