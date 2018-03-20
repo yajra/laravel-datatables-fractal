@@ -2,8 +2,8 @@
 
 namespace Yajra\Datatables\Commands;
 
-use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
+use Illuminate\Console\GeneratorCommand;
 
 class TransformerMakeCommand extends GeneratorCommand
 {
@@ -60,7 +60,7 @@ class TransformerMakeCommand extends GeneratorCommand
     protected function getStub()
     {
         return $this->argument('include') ?
-            __DIR__ . '/stubs/transformer.inc.stub':
+            __DIR__ . '/stubs/transformer.inc.stub' :
             __DIR__ . '/stubs/transformer.stub';
     }
 

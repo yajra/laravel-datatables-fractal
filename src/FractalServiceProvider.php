@@ -2,10 +2,10 @@
 
 namespace Yajra\DataTables;
 
-use Yajra\DataTables\Commands\TransformerMakeCommand;
 use League\Fractal\Manager;
 use Illuminate\Support\ServiceProvider;
 use League\Fractal\Serializer\DataArraySerializer;
+use Yajra\DataTables\Commands\TransformerMakeCommand;
 use Yajra\DataTables\Transformers\FractalTransformer;
 
 class FractalServiceProvider extends ServiceProvider
@@ -106,10 +106,10 @@ class FractalServiceProvider extends ServiceProvider
                 return new FractalTransformer($this->app->make('datatables.fractal'));
             }
         );
-        
+
         $this->commands(
             [
-            TransformerMakeCommand::class,
+				TransformerMakeCommand::class,
             ]
         );
     }
