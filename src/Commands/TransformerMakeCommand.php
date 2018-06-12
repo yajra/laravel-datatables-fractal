@@ -1,6 +1,6 @@
 <?php
 
-namespace Yajra\Datatables\Commands;
+namespace Yajra\DataTables\Commands;
 
 use Illuminate\Support\Str;
 use Illuminate\Console\GeneratorCommand;
