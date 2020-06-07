@@ -2,8 +2,8 @@
 
 namespace Yajra\DataTables\Commands;
 
-use Illuminate\Support\Str;
 use Illuminate\Console\GeneratorCommand;
+use Illuminate\Support\Str;
 
 class TransformerMakeCommand extends GeneratorCommand
 {
