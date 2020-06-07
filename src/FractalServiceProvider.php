@@ -2,8 +2,8 @@
 
 namespace Yajra\DataTables;
 
-use League\Fractal\Manager;
 use Illuminate\Support\ServiceProvider;
+use League\Fractal\Manager;
 use League\Fractal\Serializer\DataArraySerializer;
 use Yajra\DataTables\Commands\TransformerMakeCommand;
 use Yajra\DataTables\Transformers\FractalTransformer;
@@ -39,7 +39,7 @@ class FractalServiceProvider extends ServiceProvider
     {
         $this->publishes(
             [
-            __DIR__ . '/../config/datatables-fractal.php' => config_path('datatables-fractal.php'),
+                __DIR__ . '/../config/datatables-fractal.php' => config_path('datatables-fractal.php'),
             ], 'datatables-fractal'
         );
     }
