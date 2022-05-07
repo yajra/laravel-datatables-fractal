@@ -2,6 +2,7 @@
 
 namespace Yajra\DataTables\Transformers;
 
+use Illuminate\Support\Collection as LaravelCollection;
 use League\Fractal\Manager;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Serializer\SerializerAbstract;
@@ -17,7 +18,7 @@ class FractalTransformer
     /**
      * FractalTransformer constructor.
      *
-     * @param \League\Fractal\Manager $fractal
+     * @param  \League\Fractal\Manager  $fractal
      */
     public function __construct(Manager $fractal)
     {
@@ -27,13 +28,16 @@ class FractalTransformer
     /**
      * Transform output using the given transformer and serializer.
      *
-     * @param  array  $output
+     * @param  array|\Illuminate\Support\Collection  $output
      * @param  iterable  $transformer
      * @param  SerializerAbstract|null  $serializer
      * @return array
      */
-    public function transform(array $output, iterable $transformer, SerializerAbstract $serializer = null): array
-    {
+    public function transform(
+        array|LaravelCollection $output,
+        iterable $transformer,
+        SerializerAbstract $serializer = null
+    ): array {
         if ($serializer !== null) {
             $this->fractal->setSerializer($this->createSerializer($serializer));
         }
@@ -41,10 +45,10 @@ class FractalTransformer
         $collector = [];
         foreach ($transformer as $transform) {
             if ($transform != null) {
-                $resource       = new Collection($output, $this->createTransformer($transform));
-                $collection     = $this->fractal->createData($resource)->toArray();
-                $transformed    = $collection['data'] ?? $collection;
-                $collector      = array_map(
+                $resource = new Collection($output, $this->createTransformer($transform));
+                $collection = $this->fractal->createData($resource)->toArray();
+                $transformed = $collection['data'] ?? $collection;
+                $collector = array_map(
                     function ($item_collector, $item_transformed) {
                         if (! is_array($item_collector)) {
                             $item_collector = [];
