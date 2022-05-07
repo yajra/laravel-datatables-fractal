@@ -25,6 +25,21 @@ class FractalTest extends TestCase
         $this->assertIsString($json['data'][0]['name']);
     }
 
+    /** @test */
+    public function it_works_with_closure()
+    {
+        $json = $this->getAjax('/closure');
+
+        $json->assertJson([
+            'draw' => 0,
+            'recordsTotal' => 20,
+            'recordsFiltered' => 20,
+        ]);
+
+        $this->assertIsInt($json['data'][0]['id']);
+        $this->assertIsString($json['data'][0]['name']);
+    }
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -32,6 +47,17 @@ class FractalTest extends TestCase
         $this->app['router']->get('/users', function () {
             return datatables()->eloquent(User::query())
                                ->setTransformer(UserTransformer::class)
+                               ->toJson();
+        });
+
+        $this->app['router']->get('/closure', function () {
+            return datatables()->eloquent(User::query())
+                               ->setTransformer(function (User $user) {
+                                   return [
+                                       'id' => (int) $user->id,
+                                       'name' => $user->name,
+                                   ];
+                               })
                                ->toJson();
         });
     }

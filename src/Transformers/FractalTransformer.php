@@ -2,6 +2,7 @@
 
 namespace Yajra\DataTables\Transformers;
 
+use Closure;
 use Illuminate\Support\Collection as LaravelCollection;
 use League\Fractal\Manager;
 use League\Fractal\Resource\Collection;
@@ -82,11 +83,11 @@ class FractalTransformer
      * Get or create transformer instance.
      *
      * @param  \Closure|class-string|TransformerAbstract  $transformer
-     * @return \League\Fractal\TransformerAbstract
+     * @return \Closure|\League\Fractal\TransformerAbstract
      */
-    protected function createTransformer(\Closure|string|TransformerAbstract $transformer): TransformerAbstract
+    protected function createTransformer(Closure|string|TransformerAbstract $transformer): Closure|TransformerAbstract
     {
-        if ($transformer instanceof TransformerAbstract || $transformer instanceof \Closure) {
+        if ($transformer instanceof TransformerAbstract || $transformer instanceof Closure) {
             return $transformer;
         }
 
