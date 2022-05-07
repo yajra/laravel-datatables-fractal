@@ -2,7 +2,6 @@
 
 namespace Yajra\DataTables\Fractal\Tests;
 
-
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Yajra\DataTables\Fractal\Tests\Models\User;
 use Yajra\DataTables\Fractal\Tests\Transformers\UserTransformer;
