@@ -12,7 +12,7 @@ class FractalTransformer
     /**
      * @var \League\Fractal\Manager
      */
-    protected $fractal;
+    protected Manager $fractal;
 
     /**
      * FractalTransformer constructor.
@@ -27,12 +27,12 @@ class FractalTransformer
     /**
      * Transform output using the given transformer and serializer.
      *
-     * @param  mixed $output
-     * @param  mixed $transformer
-     * @param  mixed $serializer
+     * @param  array  $output
+     * @param  iterable  $transformer
+     * @param  SerializerAbstract|null  $serializer
      * @return array
      */
-    public function transform($output, $transformer, $serializer = null)
+    public function transform(array $output, iterable $transformer, SerializerAbstract $serializer = null): array
     {
         if ($serializer !== null) {
             $this->fractal->setSerializer($this->createSerializer($serializer));
@@ -46,7 +46,7 @@ class FractalTransformer
                 $transformed    = $collection['data'] ?? $collection;
                 $collector      = array_map(
                     function ($item_collector, $item_transformed) {
-                        if ($item_collector === null) {
+                        if (! is_array($item_collector)) {
                             $item_collector = [];
                         }
 
@@ -62,10 +62,10 @@ class FractalTransformer
     /**
      * Get or create transformer serializer instance.
      *
-     * @param  mixed $serializer
+     * @param  class-string|SerializerAbstract  $serializer
      * @return \League\Fractal\Serializer\SerializerAbstract
      */
-    protected function createSerializer($serializer)
+    protected function createSerializer(SerializerAbstract|string $serializer): SerializerAbstract
     {
         if ($serializer instanceof SerializerAbstract) {
             return $serializer;
@@ -77,10 +77,10 @@ class FractalTransformer
     /**
      * Get or create transformer instance.
      *
-     * @param  mixed $transformer
+     * @param  \Closure|class-string|TransformerAbstract  $transformer
      * @return \League\Fractal\TransformerAbstract
      */
-    protected function createTransformer($transformer)
+    protected function createTransformer(\Closure|string|TransformerAbstract $transformer): TransformerAbstract
     {
         if ($transformer instanceof TransformerAbstract || $transformer instanceof \Closure) {
             return $transformer;

@@ -1,0 +1,19 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+
+    paths:
+        - src
+
+    level: 5
+
+    ignoreErrors:
+        - '#Access to an undefined property Yajra\\DataTables\\FractalServiceProvider::\$transformer.#'
+        - '#Access to an undefined property Yajra\\DataTables\\FractalServiceProvider::\$serializer.#'
+
+    excludePaths:
+
+    checkMissingIterableValueType: false
+
+    checkGenericClassInNonGenericObjectType: false
