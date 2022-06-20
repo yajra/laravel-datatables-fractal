@@ -17,7 +17,7 @@
   "require": {
     "php": ">=8.0.2",
     "yajra/laravel-datatables-oracle": "^10.0",
-    "league/fractal": "^0.19.2"
+    "league/fractal": "^0.20.1"
   },
   "require-dev": {
     "nunomaduro/larastan": "^2.1",
