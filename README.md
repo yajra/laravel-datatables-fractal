@@ -12,7 +12,7 @@ This package is a plugin of [Laravel DataTables](https://github.com/yajra/larave
 ## Requirements
 
 - [PHP >= 8.1](http://php.net/)
-- [Laravel 9.x](https://github.com/laravel/framework)
+- [Laravel 10.x](https://github.com/laravel/framework)
 - [Laravel DataTables](https://github.com/yajra/laravel-datatables)
 
 ## Documentations
