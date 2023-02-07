@@ -1,6 +1,6 @@
 # Laravel DataTables Fractal Plugin
 
-[![Laravel 9.x](https://img.shields.io/badge/Laravel-9.x-orange.svg)](http://laravel.com)
+[![Laravel 10.x](https://img.shields.io/badge/Laravel-10.x-orange.svg)](http://laravel.com)
 [![Latest Stable Version](https://img.shields.io/packagist/v/yajra/laravel-datatables-fractal.svg)](https://packagist.org/packages/yajra/laravel-datatables-fractal)
 [![Build Status](https://travis-ci.org/yajra/laravel-datatables-fractal.svg?branch=master)](https://travis-ci.org/yajra/laravel-datatables-fractal)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yajra/laravel-datatables-fractal/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yajra/laravel-datatables-fractal/?branch=master)
@@ -11,7 +11,7 @@ This package is a plugin of [Laravel DataTables](https://github.com/yajra/larave
 
 ## Requirements
 
-- [PHP >= 8.0.2](http://php.net/)
+- [PHP >= 8.1](http://php.net/)
 - [Laravel 9.x](https://github.com/laravel/framework)
 - [Laravel DataTables](https://github.com/yajra/laravel-datatables)
 
@@ -25,6 +25,7 @@ This package is a plugin of [Laravel DataTables](https://github.com/yajra/larave
 |:--------------|:--------|
 | 8.x and below | 1.x     |
 | 9.x           | 9.x     |
+| 10.x          | 10.x    |
 
 ## Quick Installation
 
