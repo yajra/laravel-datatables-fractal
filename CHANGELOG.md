@@ -2,6 +2,10 @@
 
 ## Changelog
 
+### v10.0.0 - 2023-02-07
+
+- Add support for Laravel 10
+
 ### v9.1.0 - 2022-06-20
 
 - Update league/fractal to latest version #30
