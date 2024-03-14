@@ -46,19 +46,19 @@ class FractalTest extends TestCase
 
         $this->app['router']->get('/users', function () {
             return datatables()->eloquent(User::query())
-                               ->setTransformer(UserTransformer::class)
-                               ->toJson();
+                ->setTransformer(UserTransformer::class)
+                ->toJson();
         });
 
         $this->app['router']->get('/closure', function () {
             return datatables()->eloquent(User::query())
-                               ->setTransformer(function (User $user) {
-                                   return [
-                                       'id' => (int) $user->id,
-                                       'name' => $user->name,
-                                   ];
-                               })
-                               ->toJson();
+                ->setTransformer(function (User $user) {
+                    return [
+                        'id' => (int) $user->id,
+                        'name' => $user->name,
+                    ];
+                })
+                ->toJson();
         });
     }
 }
