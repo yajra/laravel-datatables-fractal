@@ -7,10 +7,6 @@ use Yajra\DataTables\Fractal\Tests\Models\User;
 
 class UserTransformer extends TransformerAbstract
 {
-    /**
-     * @param  \Yajra\DataTables\Fractal\Tests\Models\User  $user
-     * @return array
-     */
     public function transform(User $user): array
     {
         return [
