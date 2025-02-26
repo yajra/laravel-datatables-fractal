@@ -78,9 +78,7 @@ class FractalServiceProvider extends ServiceProvider
             return $fractal;
         });
 
-        $this->app->singleton('datatables.transformer', function () {
-            return new FractalTransformer($this->app->make('datatables.fractal'));
-        });
+        $this->app->singleton('datatables.transformer', fn () => new FractalTransformer($this->app->make('datatables.fractal')));
 
         $this->commands([
             TransformerMakeCommand::class,
