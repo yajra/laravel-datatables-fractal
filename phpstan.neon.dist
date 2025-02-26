@@ -1,5 +1,5 @@
 includes:
-    - ./vendor/nunomaduro/larastan/extension.neon
+    - ./vendor/larastan/larastan/extension.neon
 
 parameters:
 
@@ -9,11 +9,7 @@ parameters:
     level: 5
 
     ignoreErrors:
-        - '#Access to an undefined property Yajra\\DataTables\\FractalServiceProvider::\$transformer.#'
-        - '#Access to an undefined property Yajra\\DataTables\\FractalServiceProvider::\$serializer.#'
+        -   identifier: function.alreadyNarrowedType
 
     excludePaths:
 
-    checkMissingIterableValueType: false
-
-    checkGenericClassInNonGenericObjectType: false
