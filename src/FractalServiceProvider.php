@@ -68,8 +68,8 @@ class FractalServiceProvider extends ServiceProvider
             $request = $this->app['request'];
 
             $includesKey = $config->get('datatables-fractal.includes', 'include');
-            if ($request->get($includesKey)) {
-                $fractal->parseIncludes($request->get($includesKey));
+            if ($request->input($includesKey)) {
+                $fractal->parseIncludes($request->input($includesKey));
             }
 
             $serializer = $config->get('datatables-fractal.serializer', DataArraySerializer::class);
